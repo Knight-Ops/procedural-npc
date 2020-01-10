@@ -1,5 +1,5 @@
 <npc> ::= '{ '<name> ', "Profession": "'<profession>'", "Bond": '<bond>' }'
 <npc-no-bond> ::= '{ '<name> ', "Profession": "'<profession>'" }'
-<name> ::=  <dragonborn-female> | <dragonborn-male> | <dwarvern-female> | <dwarvern-male>
+<name> ::=  <dragonborn-female> | <dragonborn-male> | <dwarvern-female> | <dwarvern-male> | <elven-female> | <elven-male>
 <profession> ::= 'Tavern wench' | 'Shopkeeper' | 'Blacksmith'
 <bond> ::= '""' | '""' | <npc> | <npc-no-bond>
