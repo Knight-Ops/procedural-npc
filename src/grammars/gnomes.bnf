@@ -1,0 +1,28 @@
+<gnomish-female> ::= '"Name": "'<gnomish-female-first-name>' '<gnomish-clan>'", "Gender": "Female", "Race": "'<gnomish-races>'"'
+
+<gnomish-male> ::= '"Name": "'<gnomish-male-first-name>' '<gnomish-clan>'", "Gender": "Male", "Race": "'<gnomish-races>'"'
+
+<gnomish-female-first-name> ::= 'Abalaba' | 'Bimpnottin' | 'Breena' | 'Buvvie' | 'Callybon' | 'Caramip' | 'Carlin' | 'Cumpen' | 
+                                'Dalaba' | 'Donella' | 'Duvamil' | 'Ella' | 'Ellyjoybel' | 'Ellywick' | 'Enidda' | 'Lilli' | 
+                                'Loopmottin' | 'Lorilla' | 'Luthra' | 'Mardnab' | 'Meena' | 'Meeny' | 'Mumpena' | 'Nissa' | 
+                                'Numba' | 'Nyx' | 'Oda' | 'Oppah' | 'Orla' | 'Panana' | 'Pyntle' | 'Quilla' | 'Ranala' | 
+                                'Reddlepop' | 'Roywyn' | 'Salanop' | 'Shamil' | 'Siffress' | 'Symma' | 'Tana' | 'Tenena' | 
+                                'Tervaround' | 'Tippletoe' | 'Ulla' | 'Unvera' | 'Veloptima' | 'Virra' | 'Waywocket' | 'Yebe' | 
+                                'Zanna'
+
+<gnomish-male-first-name> ::=  'Alston' | 'Alvyn' | 'Anverth' | 'Arumawann' | 'Bilbron' | 'Boddynock' | 'Brocc' | 'Burgell' | 
+                            'Cockaby' | 'Crampernap' | 'Dabbledob' | 'Delebean' | 'Dimble' | 'Eberdeb' | 'Eldono' | 'Erky' | 
+                            'Fablen' | 'Fibblestib' | 'Fonkin' | 'Frouse' | 'Frug' | 'Gerbo' | 'Gimble' | 'Glim' | 'Igden' | 
+                            'Jabble' | 'Jebeddo' | 'Kellen' | 'Kipper' | 'Namfoodle' | 'Oppleby' | 'Orryn' | 'Paggen' | 
+                            'Pallabar' | 'Pog' | 'Qualen' | 'Ribbles' | 'Rimple' | 'Roondar' | 'Sapply' | 'Seebo' | 'Senteq' | 
+                            'Sindri' | 'Umpen' | 'Warryn' | 'Wiggens' | 'Wobbles' | 'Wrenn' | 'Zaffrab' | 'Zook'
+
+<gnomish-clan> ::= 'Albaratie' | 'Bafflestone' | 'Beren' | 'Boondiggles' | 'Cobblelob' | 'Daergel' | 'Dunben' | 'Fabblestabble' | 
+                'Fapplestamp' | 'Fiddlefen' | 'Folkor' | 'Garrick' | 'Gimlen' | 'Glittergem' | 'Gobblefirn' | 'Gummen' | 
+                'Horcusporcus' | 'HumpleBumple' | 'Ironhide' | 'Leffery' | 'Lingenhall' | 'Loofollue' | 'Maekkelferce' | 
+                'Miggledy' | 'Munggen' | 'Murnig' | 'Musgraben' | 'Nackle' | 'Ningel' | 'Nopenstallen' | 'Nuckelstamp' | 
+                'Offund' | 'Oomtrowl' | 'Pilwicken' | 'Pingun' | 'Quillsharpener' | 'Raulnor' | 'Reese' | 'Rofferton' | 
+                'Scheppen' | 'Shadowcloak' | 'Silverthread' | 'Sympony' | 'Tarkelby' | 'Timbers' | 'Turen' | 'Umbodoben' | 
+                'Waggletop' | 'Welber' | 'Wildwander'
+
+<gnomish-races> ::= 'Forest Gnome' | 'Rock Gnome'
