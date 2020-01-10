@@ -1,6 +1,6 @@
-<dragonborn-female> ::= '"Name": "'<dragonborn-female-first-name>' '<dragonborn-clan>'", "Gender": "Female", "Race": "Dragonborn"'
+<dragonborn-female> ::= '"Name": "'<dragonborn-female-first-name>' '<dragonborn-clan>'", "Gender": "Female", "Race": "'<dragonborn-races>'"'
 
-<dragonborn-male> ::= '"Name": "'<dragonborn-male-first-name>' '<dragonborn-clan>'", "Gender": "Male", "Race": "Dragonborn"'
+<dragonborn-male> ::= '"Name": "'<dragonborn-male-first-name>' '<dragonborn-clan>'", "Gender": "Male", "Race": "'<dragonborn-races>'"'
 
 <dragonborn-female-first-name> ::= 'Akra' | 'Aasathra' | 'Antrara' | 'Arava' | 'Biri' | 'Blendaeth' | 'Burana' | 'Chassath' | 
                         'Daar' | 'Dentratha' | 'Doudra' | 'Driindar' | 'Eggren' | 'Farideh' | 'Findex' | 'Furrele' | 
@@ -24,3 +24,6 @@
                     'Pfaphnyrennish' | 'Phrahdrandon' | 'Pyratallinost' | 'Qyxpahrgh' | 'Raghthroknaar' | 'Shestendeliath' | 
                     'Skaarzborroosh' | 'Sumnarghthrysh' | 'Tiammanthyllish' | 'Turnuroth' | 'Umbyrphrael' | 'Vangdondalor' | 
                     'Verthisathurgiesh' | 'Wivvyrholdalphiax' | 'Wystongjiir' | 'Xephyrbahnor' | 'Yarjerit' | 'Zzzxaaxthroth'
+
+<dragonborn-races> ::= 'Black Dragonborn' | 'Blue Dragonborn' | 'Brass Dragonborn' | 'Bronze Dragonborn' | 'Copper Dragonborn' | 
+                    'Gold Dragonborn' | 'Green Dragonborn' | 'Red Dragonborn' | 'Silver Dragonborn' | 'White Dragonborn'

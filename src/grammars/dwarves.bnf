@@ -1,6 +1,6 @@
-<dwarvern-female> ::= '"Name": "'<dwarvern-female-first-name>' '<dwarvern-clan>'", "Gender": "Female", "Race": "Dwarf"'
+<dwarvern-female> ::= '"Name": "'<dwarvern-female-first-name>' '<dwarvern-clan>'", "Gender": "Female", "Race": "'<dwarvern-races>'"'
 
-<dwarvern-male> ::= '"Name": "'<dwarvern-male-first-name>' '<dwarvern-clan>'", "Gender": "Male", "Race": "Dwarf"'
+<dwarvern-male> ::= '"Name": "'<dwarvern-male-first-name>' '<dwarvern-clan>'", "Gender": "Male", "Race": "'<dwarvern-races>'"'
 
 <dwarvern-female-first-name> ::= 'Anbera' | 'Artin' | 'Audhild' | 'Balifra' | 'Barbena' | 'Bardryn' | ' Bolhild' | 'Dagnal' | 
                                 'Dariff' | 'Delre' | 'Diesa' | 'Eldeth' | 'Eridred' | 'Falkrunn' | 'Fallthra' | 'Finellen' | 
@@ -23,3 +23,5 @@
                     'Morigak' | 'Orcfoe' | 'Rakankrak' | 'Ruby-Eye' | 'Rumnaheim' | 'Silveraxe' | 'Silverstone' | 'Steelfist' | 
                     'Stoutale' | 'Strakeln' | 'Strongheart' | 'Thrahak' | 'Torevir' | 'Torunn' | 'Trollbleeder' | 'Trueanvil' | 
                     'Trueblood' | 'Ungart' 
+
+<dwarvern-races> ::= 'Hill Dwarf' | 'Mountain Dwarf'
