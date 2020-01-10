@@ -12,7 +12,20 @@ fn read_bnfs() -> io::Result<String> {
         temp_str += &fs::read_to_string(file)?;
     }
 
-    Ok(temp_str)
+    // Filter out comments so we don't panic
+    let mut bnf_lines : Vec<&str> = temp_str.lines().collect();
+    
+    for (idx, line) in bnf_lines.clone().iter().enumerate() {
+        if line.starts_with('#') {
+            bnf_lines.remove(idx);
+        }
+    }
+
+    let mut uncommented_string : String = String::new();
+
+    bnf_lines.iter().for_each(|entry| uncommented_string += *entry);
+
+    Ok(uncommented_string)
 }
 
 fn main() {
