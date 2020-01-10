@@ -1,0 +1,26 @@
+<dragonborn-female> ::= '"Name": "'<dragonborn-female-first-name>' '<dragonborn-clan>'", "Gender": "Female", "Race": "Dragonborn"'
+
+<dragonborn-male> ::= '"Name": "'<dragonborn-male-first-name>' '<dragonborn-clan>'", "Gender": "Male", "Race": "Dragonborn"'
+
+<dragonborn-female-first-name> ::= 'Akra' | 'Aasathra' | 'Antrara' | 'Arava' | 'Biri' | 'Blendaeth' | 'Burana' | 'Chassath' | 
+                        'Daar' | 'Dentratha' | 'Doudra' | 'Driindar' | 'Eggren' | 'Farideh' | 'Findex' | 'Furrele' | 
+                        'Gesrethe' | 'Gilkaas' | 'Harann' | 'Havilar' | 'Hethress' | 'Hillanot' | 'Jaxi' | 'Jezean' | 
+                        'Jheri' | 'Kadana' | 'Kava' | 'Korinn' | 'Megren' | 'Mijira' | 'Mishann' | 'Nala' | 'Nuthra' | 
+                        'Perra' | 'Pogranix' | 'Pyxrin' | 'Quespa' | 'Raiann' | 'Rezena' | 'Ruloth' | 'Saphara' | 
+                        'Savaran' | 'Sora' | 'Surina' | 'Synthrin' | 'Tatyan' | 'Thava' | 'Uadjit' | 'Vezera' | 'Zykroff'
+
+<dragonborn-male-first-name> ::= 'Adrex' | 'Arjhan' | 'Azzakh' | 'Balasar' | 'Baradad' | 'Bharash' | 'Bidreked' | 'Dadalan' | 
+                        'Dazzazn' | 'Direcris' | 'Donaar' | 'Fax' | 'Gargax' | 'Ghesh' | 'Gorbundus' | 'Greethen' | 'Heskan' | 
+                        'Hirrathak' | 'Ildrex' | 'Kaladan' | 'Kerkad' | 'Kiirith' | 'Kriv' | 'Maagog' | 'Medrash' | 'Mehen' | 
+                        'Mozikth' | 'Mreksh' | 'Mugrunden' | 'Nadarr' | 'Nithther' | 'Norkruuth' | 'Nykkan' | 'Pandjed' | 'Patrin' | 
+                        'Pijjirik' | 'Quarethon' | 'Rathkran' | 'Rhogar' | 'Rivaan' | 'Sethrekar' | 'Shamash' | 'Shedinn' | 
+                        'Srorthen' | 'Tarhun' | 'Torinn' | 'Trynnicus' | 'Valorean' | 'Vrondiss' | 'Zedaar'
+
+<dragonborn-clan> ::= 'Akambherylliax' | 'Argenthrixus' | 'Baharoosh' | 'Beryntolthropal' | 'Bhenkumbyrznaax' | 'Caavylteradyn' | 
+                    'Chumbyxirinnish' | 'Clethtinthiallor' | 'Daardendrian' | 'Delmirev' | 'Dhyrktelonis' | 'Ebynichtomonis' | 
+                    'Esstyrlynn' | 'Fharngnarthnost' | 'Ghaallixirn' | 'Grrrmmballhyst' | 'Gygazzylyshrift' | 'Hashphronyxadyn' | 
+                    'Hshhsstoroth' | 'Imbixtellrhyst' | 'Jerynomonis' | 'Jharthraxyn' | 'Kerrhylon' | 'Kimbatuul' | 'Lhamboldennish' | 
+                    'Linxakasendalor' | 'Mohradyllion' | 'Mystan' | 'Nemmonis' | 'Norixius' | 'Ophinshtalajiir' | 'Orexijandilin' | 
+                    'Pfaphnyrennish' | 'Phrahdrandon' | 'Pyratallinost' | 'Qyxpahrgh' | 'Raghthroknaar' | 'Shestendeliath' | 
+                    'Skaarzborroosh' | 'Sumnarghthrysh' | 'Tiammanthyllish' | 'Turnuroth' | 'Umbyrphrael' | 'Vangdondalor' | 
+                    'Verthisathurgiesh' | 'Wivvyrholdalphiax' | 'Wystongjiir' | 'Xephyrbahnor' | 'Yarjerit' | 'Zzzxaaxthroth'
