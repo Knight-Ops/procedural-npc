@@ -13,7 +13,3 @@ jobs:
       run: cargo build --verbose
     - name: Run tests
       run: cargo test --verbose
-    - name: Run Docker Buildx
-      run: docker buildx
-    - name: Available platforms
-      run: echo ${{ steps.buildx.outputs.platforms }}
