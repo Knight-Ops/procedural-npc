@@ -34,10 +34,15 @@ jobs:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_REPO_NAME: ${{ secrets.DOCKER_REPO_NAME }}
       run: docker build -t $DOCKER_USERNAME/$DOCKER_REPO_NAME:$GITHUB_SHA .
+    - name: Tag Docker Image
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_REPO_NAME: ${{ secrets.DOCKER_REPO_NAME }}
+      run: docker tag $DOCKER_USERNAME/$DOCKER_REPO_NAME:$GITHUB_SHA $DOCKER_USERNAME/$DOCKER_REPO_NAME:latest
     - name: Push Image to Repository
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_REPO_NAME: ${{ secrets.DOCKER_REPO_NAME }}
-      run: docker push $DOCKER_USERNAME/$DOCKER_REPO_NAME:$GITHUB_SHA
+      run: docker push $DOCKER_USERNAME/$DOCKER_REPO_NAME
     - name: Logout of Docker Repository
       run: docker logout
