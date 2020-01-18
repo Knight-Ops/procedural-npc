@@ -29,5 +29,15 @@ jobs:
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         DOCKER_URL: ${{ secrets.DOCKER_URL }}
       run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD $DOCKER_URL
+    - name: Build Docker Container
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_REPO_NAME: ${{ secrets.DOCKER_REPO_NAME }}
+      run: docker build -t $DOCKER_USERNAME/$DOCKER_REPO_NAME:$GITHUB_SHA .
+    - name: Push Image to Repository
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_REPO_NAME: ${{ secrets.DOCKER_REPO_NAME }}
+      run: docker push $DOCKER_USERNAME/$DOCKER_REPO_NAME:$GITHUB_SHA
     - name: Logout of Docker Repository
       run: docker logout
