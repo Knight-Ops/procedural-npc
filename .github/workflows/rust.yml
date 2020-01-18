@@ -3,7 +3,7 @@ name: Rust
 on: [push]
 
 jobs:
-  build:
+  Testing:
     name: Testing
     runs-on: self-hosted
 
@@ -13,3 +13,21 @@ jobs:
       run: cargo build --verbose
     - name: Run tests
       run: cargo test --verbose
+      
+  Deployment:
+    name: Deployment
+    needs: Testing
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build Release
+      run: cargo build --verbose --release
+    - name: Login to Docker Repository
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKER_URL: ${{ secrets.DOCKER_URL }}
+      run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD $DOCKER_URL
+    - name: Logout of Docker Repository
+      run: docker logout
