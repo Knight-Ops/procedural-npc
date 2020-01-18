@@ -5,5 +5,5 @@
         <dwarvern-female> | <dwarvern-male> | <elven-female> | <elven-male> | <halfling-female> | <halfling-male> | <human-female> | <human-male> |
         <dwarvern-female> | <dwarvern-male> | <elven-female> | <elven-male> | <halfling-female> | <halfling-male> | <human-female> | <human-male> |
         <dragonborn-female> | <dragonborn-male> | <gnomish-female> | <gnomish-male> | <half-orc-female> | <half-orc-male> | <tiefling-female> | <tiefling-male>
-<profession> ::= 'Tavern wench' | 'Shopkeeper' | 'Blacksmith'
+<profession> ::= 'Tavern wench' | 'Shopkeeper' | 'Blacksmith' | 'Healer' | 'Constable' | 'Apocathary' | 'Barkeep'
 <bond> ::= '""' | '""' | <npc> | <npc-no-bond>

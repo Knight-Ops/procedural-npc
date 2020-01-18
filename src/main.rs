@@ -1,5 +1,6 @@
 use bnf::Grammar;
 use std::{fs, io};
+use serde_json::Value;
 
 fn read_bnfs() -> io::Result<String> {
     let mut temp_str = String::new();
@@ -33,10 +34,18 @@ fn main() {
 
     let grammar: Grammar = input.parse().unwrap();
 
-    for _ in 0..10 {
+    for _ in 0..100 {
         let npc = grammar.generate().unwrap();
-        println!("{}", npc);
 
-        println!("------------------")
+        let v: Value = serde_json::from_str(&npc).unwrap();
+
+        if format!("{}", v["Race"]).contains("Dwarf") {
+            println!("{}", v["Name"])
+        }
+
+        // println!("{}", npc);
+
+        // println!("------------------")
+        
     }
 }

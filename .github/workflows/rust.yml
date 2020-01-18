@@ -23,29 +23,35 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build Release
       run: cargo build --verbose --release
-    - name: Login to Docker Repository
-      env:
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        DOCKER_URL: ${{ secrets.DOCKER_URL }}
-      run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD $DOCKER_URL
-    - name: Build Docker Container
-      env:
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_REPO_NAME: ${{ secrets.DOCKER_REPO_NAME }}
-      run: docker build -t $DOCKER_USERNAME/$DOCKER_REPO_NAME:$GITHUB_SHA .
-    - name: Tag Docker Image
-      env:
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_REPO_NAME: ${{ secrets.DOCKER_REPO_NAME }}
-      run: docker tag $DOCKER_USERNAME/$DOCKER_REPO_NAME:$GITHUB_SHA $DOCKER_USERNAME/$DOCKER_REPO_NAME:latest
-    - name: Push Image to Repository
-      env:
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_REPO_NAME: ${{ secrets.DOCKER_REPO_NAME }}
-      run: docker push $DOCKER_USERNAME/$DOCKER_REPO_NAME
-    - name: Logout of Docker Repository
-      run: docker logout
+    - name: Publish to Registry
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: ${{ secrets.DOCKER_USERNAME }}/$DOCKER_REPO_NAME
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+    # - name: Login to Docker Repository
+    #   env:
+    #     DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+    #     DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+    #     DOCKER_URL: ${{ secrets.DOCKER_URL }}
+    #   run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD $DOCKER_URL
+    # - name: Build Docker Container
+    #   env:
+    #     DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+    #     DOCKER_REPO_NAME: ${{ secrets.DOCKER_REPO_NAME }}
+    #   run: docker build -t $DOCKER_USERNAME/$DOCKER_REPO_NAME:$GITHUB_SHA .
+    # - name: Tag Docker Image
+    #   env:
+    #     DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+    #     DOCKER_REPO_NAME: ${{ secrets.DOCKER_REPO_NAME }}
+    #   run: docker tag $DOCKER_USERNAME/$DOCKER_REPO_NAME:$GITHUB_SHA $DOCKER_USERNAME/$DOCKER_REPO_NAME:latest
+    # - name: Push Image to Repository
+    #   env:
+    #     DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+    #     DOCKER_REPO_NAME: ${{ secrets.DOCKER_REPO_NAME }}
+    #   run: docker push $DOCKER_USERNAME/$DOCKER_REPO_NAME
+    # - name: Logout of Docker Repository
+    #   run: docker logout
   
   Deploy:
     name: Deploy
