@@ -14,10 +14,10 @@ jobs:
     - name: Run tests
       run: cargo test --verbose
       
-  Deployment:
-    name: Deployment
+  Containerize:
+    name: Containerize
     needs: Testing
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
     - uses: actions/checkout@v1
@@ -46,3 +46,17 @@ jobs:
       run: docker push $DOCKER_USERNAME/$DOCKER_REPO_NAME
     - name: Logout of Docker Repository
       run: docker logout
+  
+  Deploy:
+    name: Deploy
+    needs: Containerize
+    runs-on: self-hosted
+
+    steps:
+    - uses: azure/k8s-set-context@v1
+      with:
+        kubeconfig: ${{ secrets.KUBECONFIG }}
+    - name: Check env
+      run: env && ls
+    - name: Get Nodes
+      run: kubectl get nodes
