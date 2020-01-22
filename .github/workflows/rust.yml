@@ -56,7 +56,5 @@ jobs:
     - uses: azure/k8s-set-context@v1
       with:
         kubeconfig: ${{ secrets.KUBECONFIG }}
-    - name: Check env
-      run: env && ls
     - name: Get Nodes
       run: kubectl get nodes
