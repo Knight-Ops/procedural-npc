@@ -16,7 +16,7 @@ def build_all():
     if os.name == 'nt':
         os.chdir(".\\ui")
     else:
-        os.chdir("/ui")
+        os.chdir("ui/")
 
     build_ui.build_and_move_ui()
 
