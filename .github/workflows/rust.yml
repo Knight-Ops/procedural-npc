@@ -9,16 +9,18 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Move to Server
-      run: cd server
-    - name: Build Server 
-      run: cargo +nightly build --verbose
+    - name: Build Server
+      run: |
+        cd server
+        cargo +nightly build --verbose
     - name: Run Server tests
-      run: cargo +nightly test --verbose
-    - name: Move to UI
-      run: cd ../ui
+      run: |
+        cd server
+        cargo +nightly test --verbose
     - name: Build UI
-      run: cargo web build
+      run: |
+        cd ui
+        cargo web build
       
   Containerize:
     name: Containerize
