@@ -6,8 +6,8 @@ if os.name == 'nt':
     sys.path.append(".\\ui")
     sys.path.append(".\\server")
 else:
-    sys.path.append("/ui")
-    sys.path.append("/server")
+    sys.path.append("ui/")
+    sys.path.append("server/")
 import build_ui
 import build_server
 
