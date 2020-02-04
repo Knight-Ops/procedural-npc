@@ -1,0 +1,4 @@
+target
+__pycache__
+static/ui.js
+static/ui.wasm
