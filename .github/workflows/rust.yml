@@ -20,7 +20,7 @@ jobs:
     - name: Build UI
       run: |
         cd ui
-        cargo web build
+        RUSTFLAGS="-C linker=lld" cargo web build
       
   Containerize:
     name: Containerize
