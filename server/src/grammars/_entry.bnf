@@ -1,9 +1,0 @@
-<npc> ::= '{ '<name> ', "Profession": "'<profession>'", "Bond": '<bond>' }'
-<npc-no-bond> ::= '{ '<name> ', "Profession": "'<profession>'" }'
-# This is a hack we can use to make things more or less common since we have no context, we just make it staistically less likely. Tweaking the ratios will change how often you see the races appear during generation
-<name> ::=  <dwarvern-female> | <dwarvern-male> | <elven-female> | <elven-male> | <halfling-female> | <halfling-male> | <human-female> | <human-male> |
-        <dwarvern-female> | <dwarvern-male> | <elven-female> | <elven-male> | <halfling-female> | <halfling-male> | <human-female> | <human-male> |
-        <dwarvern-female> | <dwarvern-male> | <elven-female> | <elven-male> | <halfling-female> | <halfling-male> | <human-female> | <human-male> |
-        <dragonborn-female> | <dragonborn-male> | <gnomish-female> | <gnomish-male> | <half-orc-female> | <half-orc-male> | <tiefling-female> | <tiefling-male>
-<profession> ::= 'Tavern wench' | 'Shopkeeper' | 'Blacksmith' | 'Healer' | 'Constable' | 'Apocathary' | 'Barkeep'
-<bond> ::= '""' | '""' | <npc> | <npc-no-bond>

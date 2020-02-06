@@ -1,2 +1,3 @@
 /target
 **/*.rs.bk
+kube_deploy.py

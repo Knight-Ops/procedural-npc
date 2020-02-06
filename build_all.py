@@ -37,5 +37,8 @@ def build_all():
         shutil.copy("../ui/static/style.css", "static/style.css")
     print("Copying files to server complete!")
 
+    if os.name == 'nt':
+        print("YOU HAVE TO BUILD ON LINUX IF YOU WANT TO BUILD THE CONTAINER!")
+
 if __name__ == "__main__":
     build_all()
