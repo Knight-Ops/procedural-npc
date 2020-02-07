@@ -26,10 +26,10 @@ enum Msg {
 impl Model {
     fn view_data(&self) -> Html {
         if self.data.is_some() {
-            let value = format!("{:?}", self.data.as_ref().unwrap());
+            let value = format!("{:#?}", self.data.as_ref().unwrap());
             
             html! {
-                <p>{ value }</p>
+                <div>{ value }</div>
             }
 
         } else {
