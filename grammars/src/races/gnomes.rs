@@ -1,8 +1,6 @@
 use rand::{thread_rng, seq::SliceRandom};
 use serde_derive::{Deserialize, Serialize};
 
-use crate::Gender;
-
 use super::RandomName;
 
 #[derive(Debug, Clone, Copy, Deserialize, Serialize)]

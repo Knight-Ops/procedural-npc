@@ -8,16 +8,6 @@ use failure::Error;
 
 use grammars::NPC;
 
-// #[derive(Serialize, Deserialize, Debug, Clone)]
-// #[serde(rename_all = "PascalCase")]
-// struct NPC {
-//     name: String,
-//     gender: String,
-//     race: String,
-//     profession: String, 
-//     // bond: Option<NPC>,
-// }
-
 struct Model {
     fetch_service: FetchService,
     console_service: ConsoleService,
@@ -37,9 +27,11 @@ impl Model {
     fn view_data(&self) -> Html {
         if self.data.is_some() {
             let value = format!("{:?}", self.data.as_ref().unwrap());
+            
             html! {
                 <p>{ value }</p>
             }
+
         } else {
             html! {
                 <p>{ "Data hasn't been fetched yet!" }</p>

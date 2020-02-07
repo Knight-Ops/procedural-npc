@@ -16,6 +16,9 @@ use rocket::State;
 use rocket_contrib::json::Json;
 
 use grammars::NPC;
+use grammars::Gender;
+
+mod types;
 
 #[get("/static/<path..>")]
 fn static_file(path: PathBuf) -> Option<NamedFile> {

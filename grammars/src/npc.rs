@@ -4,12 +4,15 @@ use serde_derive::{Deserialize, Serialize};
 use super::races;
 use super::races::RandomName;
 
+use crate::stats::StatBlock;
+
 #[derive(Debug, Clone, Deserialize, Serialize)]
 pub struct NPC {
     gender: Gender,
     race: Race,
     name: String,
     profession: Profession,
+    stats: StatBlock,
     bond: Option<NPCNoBond>,
 }
 
@@ -19,18 +22,32 @@ impl Default for NPC {
         let race = Race::default();
         let name = races::get_appropriate_name(gender, race);
         let profession = Profession::default();
+        let stats = StatBlock::random();
         let bond = NPC::random_bond();
         NPC {
             gender,
             race,
             name,
             profession,
+            stats,
             bond,
         }
     }
 }
 
 impl NPC {
+    pub fn new(gender: Option<Gender>) -> NPC {
+        if gender.is_some() {
+            NPC {
+                gender: gender.unwrap(),
+                ..Default::default()
+            }
+        } else {
+            NPC::default()
+        }
+    }
+
+
     fn random_bond() -> Option<NPCNoBond> {
         let choices = [
             Some(NPCNoBond::default()),
@@ -52,6 +69,7 @@ pub struct NPCNoBond {
     race: Race,
     name: String,
     profession: Profession,
+    stats: StatBlock,
 }
 
 impl Default for NPCNoBond {
@@ -60,11 +78,13 @@ impl Default for NPCNoBond {
         let race = Race::default();
         let name = races::get_appropriate_name(gender, race);
         let profession = Profession::default();
+        let stats = StatBlock::random();
         NPCNoBond {
             gender,
             race,
             name,
             profession,
+            stats,
         }
     }
 }
