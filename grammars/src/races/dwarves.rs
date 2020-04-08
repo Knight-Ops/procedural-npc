@@ -3,6 +3,9 @@ use serde_derive::{Deserialize, Serialize};
 
 use super::RandomName;
 
+use std::fmt::Display;
+use std::fmt;
+
 #[derive(Debug, Clone, Copy, Deserialize, Serialize)]
 pub enum DwarvernRace {
     HillDwarf,
@@ -18,6 +21,15 @@ impl Default for DwarvernRace {
 
         let mut rng = thread_rng();
         *choices.choose(&mut rng).expect("Error while choosing random race")
+    }
+}
+
+impl Display for DwarvernRace {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            DwarvernRace::HillDwarf => write!(f, "Hill Dwarf"),
+            DwarvernRace::MountainDwarf => write!(f, "Mountain Dwarf"),
+        }   
     }
 }
 

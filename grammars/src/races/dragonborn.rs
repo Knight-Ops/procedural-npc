@@ -3,6 +3,9 @@ use serde_derive::{Deserialize, Serialize};
 
 use super::RandomName;
 
+use std::fmt::Display;
+use std::fmt;
+
 #[derive(Debug, Clone, Copy, Deserialize, Serialize)]
 pub enum DragonbornRace {
     BlackDragonborn,
@@ -32,6 +35,23 @@ impl Default for DragonbornRace {
 
         let mut rng = thread_rng();
         *choices.choose(&mut rng).expect("Error while choosing random race")
+    }
+}
+
+impl Display for DragonbornRace {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            DragonbornRace::BlackDragonborn => write!(f, "Black Dragonborn"),
+            DragonbornRace::BlueDragonborn => write!(f, "Blue Dragonborn"),
+            DragonbornRace::BrassDragonborn => write!(f, "Brass Dragonborn"),
+            DragonbornRace::BronzeDragonborn => write!(f, "Bronze Dragonborn"),
+            DragonbornRace::CopperDragonborn => write!(f, "Copper Dragonborn"),
+            DragonbornRace::GoldDragonborn => write!(f, "Gold Dragonborn"),
+            DragonbornRace::GreenDragonborn => write!(f, "Green Dragonborn"),
+            DragonbornRace::RedDragonborn => write!(f, "Red Dragonborn"),
+            DragonbornRace::SilverDragonborn => write!(f, "Silver Dragonborn"),
+            DragonbornRace::WhiteDragonborn => write!(f, "White Dragonborn")
+        }   
     }
 }
 

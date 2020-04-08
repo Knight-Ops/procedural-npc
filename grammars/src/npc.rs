@@ -1,6 +1,9 @@
 use rand::{thread_rng, seq::SliceRandom};
 use serde_derive::{Deserialize, Serialize};
 
+use std::fmt;
+use std::fmt::Display;
+
 use super::races;
 use super::races::RandomName;
 
@@ -60,6 +63,18 @@ impl NPC {
         } else {
             None
         }
+    }
+
+    pub fn get_name(&self) -> String {
+        self.name.clone()
+    }
+
+    pub fn get_race(&self) -> Race {
+        self.race
+    }
+
+    pub fn get_gender(&self) -> Gender {
+        self.gender
     }
 }
 
@@ -132,6 +147,19 @@ impl Default for Gender {
     }
 }
 
+impl Display for Gender {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            Gender::Male => {
+                write!(f, "Male")
+            },
+            Gender::Female => {
+                write!(f, "Female")
+            }
+        }   
+    }
+}
+
 #[derive(Debug, Copy, Clone, Deserialize, Serialize)]
 pub enum Race {
     Dragonborn(races::dragonborn::DragonbornRace),
@@ -159,5 +187,20 @@ impl Default for Race {
 
         let mut rng = thread_rng();
         *choices.choose(&mut rng).expect("Error while choosing random gender")
+    }
+}
+
+impl Display for Race {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            Race::Dragonborn(subrace) => write!(f, "{}", subrace),
+            Race::Dwarf(subrace) => write!(f, "{}", subrace),
+            Race::Elf(subrace) => write!(f, "{}", subrace),
+            Race::Gnome(subrace) => write!(f, "{}", subrace),
+            Race::HalfOrc(subrace) => write!(f, "{}", subrace),
+            Race::Halfling(subrace) => write!(f, "{}", subrace),
+            Race::Human(subrace) => write!(f, "{}", subrace),
+            Race::Tiefling(subrace) => write!(f, "{}", subrace),
+        }   
     }
 }

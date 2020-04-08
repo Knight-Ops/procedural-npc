@@ -3,6 +3,9 @@ use serde_derive::{Deserialize, Serialize};
 
 use super::RandomName;
 
+use std::fmt::Display;
+use std::fmt;
+
 #[derive(Debug, Clone, Copy, Deserialize, Serialize)]
 pub enum HalflingRace {
     LightfootHalfling,
@@ -18,6 +21,15 @@ impl Default for HalflingRace {
 
         let mut rng = thread_rng();
         *choices.choose(&mut rng).expect("Error while choosing random race")
+    }
+}
+
+impl Display for HalflingRace {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            HalflingRace::LightfootHalfling => write!(f, "Lightfoot Halfing"),
+            HalflingRace::StoutHalfling => write!(f, "Stout Halfing"),
+        }   
     }
 }
 

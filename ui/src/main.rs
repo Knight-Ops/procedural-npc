@@ -26,16 +26,26 @@ enum Msg {
 impl Model {
     fn view_data(&self) -> Html {
         if self.data.is_some() {
+            let data = self.data.as_ref().unwrap();
             let value = format!("{:#?}", self.data.as_ref().unwrap());
+
+            let character_name = format!("Name : {}", data.get_name());
+            let character_gender = format!("{}", data.get_gender());
+            let character_race = format!("{}", data.get_race());
             
             html! {
-                <div>{ value }</div>
+                <section>
+                    <div class="character-header">
+                        <div>{character_name}</div>
+                        <div>{character_gender}</div>
+                        <div>{character_race}</div>
+                    </div>
+                </section>
+                
             }
 
         } else {
-            html! {
-                <p>{ "Data hasn't been fetched yet!" }</p>
-            }
+            html! {}
         }
     }
 
@@ -97,12 +107,14 @@ impl Component for Model {
 
     fn view(&self) -> Html {
         html! {
-            <div>
+            <>
+            { self.view_data() }
+            <footer>
                 <nav class="menu">
                     <button onclick=self.link.callback(|_| Msg::NewNPC)>{ "New NPC" }</button>
-                    { self.view_data() }
                 </nav>
-            </div>
+            </footer>
+            </>
         }
     }
 }

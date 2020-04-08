@@ -3,6 +3,9 @@ use serde_derive::{Deserialize, Serialize};
 
 use super::RandomName;
 
+use std::fmt::Display;
+use std::fmt;
+
 #[derive(Debug, Clone, Copy, Deserialize, Serialize)]
 pub enum ElvenRace {
     SunElfHighElf,
@@ -25,6 +28,18 @@ impl Default for ElvenRace {
         *choices.choose(&mut rng).expect("Error while choosing random race")
     }
 }
+
+impl Display for ElvenRace {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            ElvenRace::SunElfHighElf => write!(f, "Sun Elf (High Elf)"),
+            ElvenRace::MoonElfHighElf => write!(f, "Moon Elf (High Elf)"),
+            ElvenRace::WoodElf => write!(f, "Wood Elf"),
+            ElvenRace::DarkElfDrow => write!(f, "Drow (Dark Elf)"),
+        }   
+    }
+}
+
 
 pub struct Elf {}
 

@@ -7,3 +7,19 @@ body {
 div {
     white-space: pre;
 }
+
+.menu {
+    padding: 2rem;
+}
+
+.character {
+    padding: 0rem 2rem 2rem 2rem;
+}
+
+.character-header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
